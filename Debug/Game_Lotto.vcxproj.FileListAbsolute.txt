@@ -1,0 +1,2 @@
+C:\Users\lleon\OneDrive\Programming\Lotto-Generator\Debug\Game_Lotto.exe
+C:\Users\lleon\OneDrive\Programming\Lotto-Generator\Debug\Game_Lotto.pdb
