@@ -62,7 +62,7 @@ public:
         try
         {
             if (num <= 0) throw string("잘 못 입력하셨습니다. 0보다 큰 숫자를 입력하세요");
-            //else if (num == 0) mainMenu();
+            //else if (num == 0) mainMenu(); // 메인메뉴로 돌아가기
             else
             {
                 cout << num << "개를 생성하겠습니다." << endl;
