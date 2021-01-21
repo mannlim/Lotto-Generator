@@ -1,7 +1,9 @@
 ﻿  Game_Lotto.cpp
+C:\Users\lleon\OneDrive\Programming\Lotto-Generator\Game_Lotto.cpp(136,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\lleon\OneDrive\Programming\Lotto-Generator\Game_Lotto.cpp(151,27): warning C4018: '<': signed/unsigned mismatch
   Generating code
-  0 of 124 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+  0 of 214 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
-  Game_Lotto.vcxproj -> C:\Users\lleon\OneDrive\Programming\UsefulClass\UsefulClass\Release\Game_Lotto.exe
+  Game_Lotto.vcxproj -> C:\Users\lleon\OneDrive\Programming\Lotto-Generator\Release\Game_Lotto.exe
