@@ -1,11 +1,11 @@
-﻿  Game_Lotto.cpp
-C:\Users\lleon\OneDrive\Programming\Lotto-Generator\Game_Lotto.cpp(42,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\lleon\OneDrive\Programming\Lotto-Generator\Game_Lotto.cpp(128,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\lleon\OneDrive\Programming\Lotto-Generator\Game_Lotto.cpp(261,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\lleon\OneDrive\Programming\Lotto-Generator\Game_Lotto.cpp(276,27): warning C4018: '<': signed/unsigned mismatch
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(491,5): warning MSB8028: The intermediate directory (Release\) contains files shared from another project (Game_Lotto.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Game_Lotto.cpp
+C:\Users\lleon\OneDrive\Programming\Lotto-Generator\Game_Lotto.cpp(109,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\lleon\OneDrive\Programming\Lotto-Generator\Game_Lotto.cpp(195,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\lleon\OneDrive\Programming\Lotto-Generator\Game_Lotto.cpp(328,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\lleon\OneDrive\Programming\Lotto-Generator\Game_Lotto.cpp(343,27): warning C4018: '<': signed/unsigned mismatch
   Generating code
-  2 of 237 functions ( 0.8%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    3 functions had inline decision re-evaluated but remain unchanged
+  Previous IPDB not found, fall back to full compilation.
+  All 318 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
-  Game_Lotto.vcxproj -> C:\Users\lleon\OneDrive\Programming\Lotto-Generator\Release\Game_Lotto.exe
+  Game_Lotto.vcxproj -> C:\Users\lleon\OneDrive\Programming\Lotto-Generator\Release\Lotto_Generator.exe

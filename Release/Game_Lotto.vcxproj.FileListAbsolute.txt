@@ -1,1 +1,1 @@
-C:\Users\lleon\OneDrive\Programming\Lotto-Generator\Release\Game_Lotto.exe
+C:\Users\lleon\OneDrive\Programming\Lotto-Generator\Release\Lotto_Generator.exe

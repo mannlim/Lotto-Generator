@@ -24,6 +24,7 @@
     <ProjectGuid>{bc3e4673-713a-4fea-abcc-d0d8ac190870}</ProjectGuid>
     <RootNamespace>GameLotto</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Lotto_Generator</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

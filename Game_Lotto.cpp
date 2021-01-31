@@ -8,6 +8,73 @@
 
 using namespace std;
 
+bool compare(pair<int, int> a, pair<int, int> b)
+{
+    return a.second > b.second;
+}
+
+void historyGenerator()
+{
+    vector<pair<int, int>> countVec = {
+            {1,159},{2,150},{3,150},{4,157},{5,146},{6,146},{7,146},{8,146},{9,119},{10,154},
+            {11,149},{12,158},{13,161},{14,151},{15,144},{16,147},{17,162},{18,154},{19,148},{20,156},
+            {21,146},{22,121},{23,130},{24,147},{25,139},{26,151},{27,165},{28,132},{29,127},{30,141},
+            {31,150},{32,133},{33,157},{34,163},{35,141},{36,144},{37,149},{38,152},{39,157},{40,151},
+            {41,129},{42,144},{43,173},{44,143},{45,148} };
+
+    sort(countVec.begin(), countVec.end(), compare);
+
+    /*for (auto i : countVec)
+    {
+        cout << i.first << " " << i.second << endl;
+    }*/
+    //cout << "\n";
+
+    vector<int> numVec;
+
+    random_device rd;
+    mt19937 gen(rd());
+
+    for (auto i : countVec)
+    {
+        int wnum = gen() % 2;
+        if (wnum == 0)
+        {
+            numVec.push_back(i.first);
+        }
+    }
+
+    if (numVec.size() > 6) // 로또 번호가 6개 이상 안나오도록 조정
+    {
+        numVec.erase(numVec.begin() + 6, numVec.end());
+    }
+    else // 로또 번호가 6개가 되도록 조정
+    {
+        for (int i = numVec.size(); i < 6; i++)
+        {
+            int temp = gen() % 45 + 1;
+            numVec.push_back(temp);
+
+            for (int j = 0; j < i; j++)
+            {
+                if (numVec[j] == temp)
+                {
+                    numVec.erase(numVec.begin() + i);
+                    i--;
+                }
+            }
+        }
+    }
+
+    sort(numVec.begin(), numVec.end());
+
+    for (auto n : numVec)
+    {
+        cout << n << "\t";
+    }
+    cout << "\n";
+}
+
 void birthGenerator(int num_0, int num_1, int num_2, int num_3, int num_4, int num_5, int num_6, int num_7)
 {
     // 숫자 생성
@@ -127,7 +194,7 @@ void birthGenerator(int num_0, int num_1, int num_2, int num_3, int num_4, int n
 
     for (int n = 0; n < realVec.size(); n++)
     {
-        cout << realVec[n] << " ";
+        cout << realVec[n] << "\t";
     }
     cout << endl;
 }
@@ -176,7 +243,7 @@ public:
         cin.ignore();
         cout << "\n";
         cout << "=============================" << endl;
-        cout << "1. 랜덤 번호 생성" << endl;
+        cout << "1. 랜덤으로 로또 번호 생성" << endl;
         cout << "=============================" << endl;
         cout << "\n\n\n";
         cout << "로또 번호를 몇 개 생성할까요? 원하시는 개수를 다음과 같이 입력해주세요." << endl;
@@ -228,7 +295,7 @@ public:
         cin.ignore();
         cout << "\n";
         cout << "=============================" << endl;
-        cout << "2. 특정 숫자 포함 생성" << endl;
+        cout << "2. 특정 숫자를 포함하여 로또 번호 생성" << endl;
         cout << "=============================" << endl;
         cout << "\n\n\n";
         cout << "어떤 숫자를 포함할까요? 숫자를 다음과 같이 입력해주세요.(1 ~ 5개만!)" << endl;
@@ -350,7 +417,7 @@ public:
         cin.ignore();
         cout << "\n";
         cout << "=============================" << endl;
-        cout << "3. 생년월일 연관 번호 생성" << endl;
+        cout << "3. 생년월일과 연관된 로또 번호 생성" << endl;
         cout << "=============================" << endl;
         cout << "\n\n\n";
         cout << "생년월일을 다음과 같이 입력해주세요." << endl;
@@ -454,6 +521,61 @@ public:
     }
 };
 
+class menu_4
+{
+public:
+    menu_4()
+    {
+        cin.ignore();
+        cout << "\n";
+        cout << "=============================" << endl;
+        cout << "4. 역대 로또 당첨 번호를 기반으로 로또 번호 생성" << endl;
+        cout << "=============================" << endl;
+        cout << "\n\n\n";
+        cout << "이 페이지에서는 1회 ~ 948회차에 당첨된 번호를 기반으로 로또 번호를 생성합니다." << endl;
+        cout << "\n";
+
+        cout << "로또 번호를 몇 개 생성할까요? 원하시는 개수를 다음과 같이 입력해주세요." << endl;
+        cout << "(1개를 생성하고 싶으시면 '1' 입력 후 엔터, 5개를 생성하고 싶으시면 '5' 입력 후 엔터)" << endl;
+        cout << "\n";
+        //cout << "※ 메인 메뉴로 돌아가기를 원하시면 '0'을 입력해주세요." << endl;
+
+        int num;
+        cin >> num;
+
+        try
+        {
+            if (num <= 0) throw string("잘 못 입력하셨습니다. 0보다 큰 숫자를 입력하세요");
+            //else if (num == 0) mainMenu(); // 메인메뉴로 돌아가기
+            else
+            {
+                cout << "로또 번호 " << num << "개를 생성하겠습니다." << endl;
+                cout << "\n\n";
+                cout << "행운의 번호는?" << endl;
+                cout << "\n";
+                for (int n = 0; n < num; n++)
+                {
+                    cout << n + 1 << "번 번호 :\t";
+                    historyGenerator();
+                }
+                cout << "\n\n";
+                cout << "-------------------------------------------------------------------------------" << endl;
+                cout << "\n";
+                cout << "♥1등 당첨을 기원합니다♥" << endl;
+                cout << "\n";
+            }
+        }
+        catch (string(error_message))
+        {
+            cout << error_message << endl;
+            Sleep(3000);
+            system("cls");
+            menu_4();
+        }
+
+    }
+};
+
 void choiceMenu()
 {
     int num;
@@ -483,6 +605,11 @@ void choiceMenu()
             system("cls");
             menu_3();
         }
+        else if (num == 4)
+        {
+            system("cls");
+            menu_4();
+        }
     }
     catch (string(error_message))
     {
@@ -509,10 +636,10 @@ public:
         cout << "\n\n";
         cout << "\t" << "< MENU >" << endl;
         cout << "\n";
-        cout << "1. 랜덤 번호 생성" << endl;
-        cout << "2. 특정 숫자 포함 생성" << endl;
-        cout << "3. 생년월일 연관 번호 생성" << endl;
-        cout << "4. 역대 1위 당첨번호 기반 생성" << endl;
+        cout << "1. 랜덤으로 로또 번호 생성" << endl;
+        cout << "2. 특정 숫자를 포함하여 로또 번호 생성" << endl;
+        cout << "3. 생년월일과 연관된 로또 번호 생성" << endl;
+        cout << "4. 역대 로또 당첨 번호를 기반으로 로또 번호 생성" << endl;
         cout << "\n\n";
         cout << "-------------------------------------------------------------------------------" << endl;
         cout << "※ 이 프로그램은 단순 참고용으로만 활용하시기 바랍니다." << endl;
@@ -529,7 +656,7 @@ public:
 int main()
 {
     mainMenu();
-    //menu_3();
+    system("PAUSE");
 
     return 0;
 }
